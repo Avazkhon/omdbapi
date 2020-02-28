@@ -1,0 +1,3 @@
+export {
+  getFilmsInfo
+} from './films';
