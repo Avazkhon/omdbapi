@@ -3,10 +3,9 @@ import PropTypes from 'prop-types';
 import {
   Container,
   Row,
-  Col,
-  Card,
-  Image,
 } from 'react-bootstrap';
+
+import CardItem from './CardItem';
 
 
 const CardList= ({ films }) => (
@@ -15,24 +14,10 @@ const CardList= ({ films }) => (
         {
           films.data && films.data.Search &&
           films.data.Search.map((film) => (
-            <Col md="4">
-              <Card key={film.imdbID}>
-                <Card.Header>{film.Title}</Card.Header>
-                <Card.Body>
-                  <blockquote className="blockquote mb-0">
-                    <Row>
-                      <Col md="6">
-                        <p>year: {film.Year}</p>
-                      </Col>
-                      <Col md="6">
-                        <p>type: {film.Type}</p>
-                      </Col>
-                    </Row>
-                    <Image src={film.Poster} thumbnail />
-                  </blockquote>
-                </Card.Body>
-              </Card>
-            </Col>
+            <CardItem
+              key={film.imdbID}
+              film={film}
+            />
           ))
         }
     </Row>
