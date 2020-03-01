@@ -2,6 +2,7 @@ import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
+import Layout from '../Layout';
 
 import {
   getFilmsInfo
@@ -21,11 +22,13 @@ class Home extends React.Component {
 
   render() {
     return (
-      <div className="Home">
-        <div className="Home-header">
-          <h2>Welcome to omdapi</h2>
+      <Layout>
+        <div className="Home">
+          <div className="Home-header">
+            <h2>Welcome to omdapi</h2>
+          </div>
         </div>
-      </div>
+      </Layout>
     );
   }
 }

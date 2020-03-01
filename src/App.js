@@ -2,7 +2,7 @@ import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 import Home from './containers/Home';
 import { Provider } from 'react-redux'
-
+import 'bootstrap/dist/css/bootstrap.min.css';
 import store from './store/index';
 
 const App = () => (
