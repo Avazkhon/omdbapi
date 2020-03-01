@@ -1,3 +1,4 @@
 export {
-  getFilmsInfo
+  getFilmsInfo,
+  getFilmInfo,
 } from './films';

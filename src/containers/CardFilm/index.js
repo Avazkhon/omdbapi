@@ -13,18 +13,25 @@ import {
   ListGroupItem,
 } from 'react-bootstrap';
 
-// import {
-//   getFilmsInfo
-// } from 'actions';
+import {
+  getFilmInfo
+} from 'actions';
 
 import Layout from '../Layout';
 
 class CardFilm extends React.Component {
 
+  componentDidMount() {
+    const { getFilmInfo } = this.props;
+    const { imdbID } = this.props.match.params;
+    if (typeof getFilmInfo === 'function') {
+      getFilmInfo(imdbID);
+    }
+  }
+
   render() {
     const {
-      // getFilmsInfo,
-      films,
+      film,
     } = this.props;
 
     return (
@@ -58,7 +65,7 @@ class CardFilm extends React.Component {
 }
 
 CardFilm.propTypes = {
-  films: PropTypes.shape({}),
+  film: PropTypes.shape({}),
 };
 
 function mapStateToProps(state) {
@@ -71,5 +78,5 @@ function mapStateToProps(state) {
 }
 
 export default connect(mapStateToProps, {
-  // getFilmsInfo
+  getFilmInfo
 })(CardFilm);
