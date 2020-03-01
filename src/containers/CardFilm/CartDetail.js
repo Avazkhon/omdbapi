@@ -1,16 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import {
-  // Form,
-  // FormControl,
-  // Button,
-  // Container,
   Row,
   Col,
   Card,
   ListGroup,
   ListGroupItem,
 } from 'react-bootstrap';
+
+import Ratings from './Ratings';
 
 const CartDetail = (
   {
@@ -31,12 +29,13 @@ const CartDetail = (
       Type,
       DVD,
       Production,
+      Ratings: ratings,
     }
   },
 ) => (
   <Row className="justify-content-md-center">
     <Col sm="8">
-      <Card style={{ width: '48rem' }}>
+      <Card bg="dark" text="white" style={{ width: '48rem' }}>
         <Card.Body>
           <Row>
             <Col sm="7">
@@ -48,20 +47,25 @@ const CartDetail = (
               <Card.Img variant="top" src={Poster} />
             </Col>
           </Row>
+
+          <Ratings
+            ratings={ratings}
+          />
+
           </Card.Body>
-            <ListGroup className="list-group-flush">
-            <ListGroupItem>Year: {Year}</ListGroupItem>
-            <ListGroupItem>Run time: {Runtime}</ListGroupItem>
-            <ListGroupItem>Genre: {Genre}</ListGroupItem>
-            <ListGroupItem>Director: {Director}</ListGroupItem>
-            <ListGroupItem>Actors: {Actors}</ListGroupItem>
-            <ListGroupItem>Language: {Language}</ListGroupItem>
-            <ListGroupItem>Country: {Country}</ListGroupItem>
-            <ListGroupItem>Awards: {Awards}</ListGroupItem>
-            <ListGroupItem>imdb ID: {imdbID}</ListGroupItem>
-            <ListGroupItem>Type: {Type}</ListGroupItem>
-            <ListGroupItem>DVD: {DVD}</ListGroupItem>
-            <ListGroupItem>Production: {Production}</ListGroupItem>
+            <ListGroup className="list-group-flush dark">
+              <ListGroupItem>Year: {Year}</ListGroupItem>
+              <ListGroupItem>Run time: {Runtime}</ListGroupItem>
+              <ListGroupItem>Genre: {Genre}</ListGroupItem>
+              <ListGroupItem>Director: {Director}</ListGroupItem>
+              <ListGroupItem>Actors: {Actors}</ListGroupItem>
+              <ListGroupItem>Language: {Language}</ListGroupItem>
+              <ListGroupItem>Country: {Country}</ListGroupItem>
+              <ListGroupItem>Awards: {Awards}</ListGroupItem>
+              <ListGroupItem>imdb ID: {imdbID}</ListGroupItem>
+              <ListGroupItem>Type: {Type}</ListGroupItem>
+              <ListGroupItem>DVD: {DVD}</ListGroupItem>
+              <ListGroupItem>Production: {Production}</ListGroupItem>
             </ListGroup>
           <Card.Body>
           <Card.Link href="#">Card Link</Card.Link>

@@ -1,17 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import {
-  // Form,
-  // FormControl,
-  // Button,
-  // Container,
-  Row,
-  Col,
-  Card,
-  ListGroup,
-  ListGroupItem,
-} from 'react-bootstrap';
 
 import {
   getFilmInfo
