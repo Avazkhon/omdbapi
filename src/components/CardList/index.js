@@ -15,16 +15,16 @@ const CardList= ({ films }) => (
         {
           films.data && films.data.Search &&
           films.data.Search.map((film) => (
-            <Col md={{ span: 4 }}>
+            <Col md="4">
               <Card key={film.imdbID}>
                 <Card.Header>{film.Title}</Card.Header>
                 <Card.Body>
                   <blockquote className="blockquote mb-0">
                     <Row>
-                      <Col md={{ span: 6 }}>
+                      <Col md="6">
                         <p>year: {film.Year}</p>
                       </Col>
-                      <Col md={{ span: 6 }}>
+                      <Col md="6">
                         <p>type: {film.Type}</p>
                       </Col>
                     </Row>
