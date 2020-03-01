@@ -2,12 +2,13 @@ import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 import {
-  Form,
-  FormControl,
-  Button,
-  Container,
-  Row,
-  Col,
+  // Form,
+  // FormControl,
+  // Button,
+  // Container,
+  // Row,
+  // Col,
+  // Card,
 } from 'react-bootstrap';
 
 import {
@@ -18,17 +19,23 @@ import Layout from '../Layout';
 
 
 import FormSearch from 'components/FormSearch';
+import CardList from 'components/CardList';
 
 class Home extends React.Component {
 
   render() {
     const {
       getFilmsInfo,
+      films,
     } = this.props;
     return (
       <Layout>
         <FormSearch
           getFilmsInfo={getFilmsInfo}
+        />
+
+        <CardList
+          films={films}
         />
       </Layout>
     );
