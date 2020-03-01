@@ -32,8 +32,8 @@ class FormSearch extends React.Component {
   render() {
     return (
       <Container>
-        <Row>
-          <Col sm="8">
+        <Row className="justify-content-md-center">
+          <Col>
             <FormControl type="text" placeholder="Enter name" className="mr-sm-2" />
           </Col>
           <Col sm="2">

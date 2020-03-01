@@ -10,7 +10,7 @@ import {
 
 const CardItem = ({ film }) => (
   <Col md="4">
-    <Card.Link href={`/card/?id=${film.imdbID}`}>
+    <Card.Link href={`/card/{film.imdbID}`}>
       <Card bg="dark" text="white">
         <Card.Header>{film.Title}</Card.Header>
         <Card.Body>

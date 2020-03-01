@@ -44,6 +44,7 @@ class Home extends React.Component {
 
 Home.propTypes = {
   getFilmsInfo: PropTypes.func,
+  films: PropTypes.shape({}),
 };
 
 function mapStateToProps(state) {
