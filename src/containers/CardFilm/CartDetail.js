@@ -24,8 +24,8 @@ const CartDetail = (
   },
 ) => (
   <Row className="justify-content-md-center">
-    <Col sm="8">
-      <Card bg="dark" text="white" style={{ width: '48rem' }}>
+    <Col xs="12" sm="8" md="8" lg="8" xl="8">
+      <Card bg="dark" text="white">
         <Card.Body>
           <Row>
             <Col sm="7">

@@ -7,7 +7,7 @@ const navBar = [
 ];
 
 const Header = () => (
-  <Navbar bg="dark" variant="dark">
+  <Navbar bg="dark" fixed="top" variant="dark">
     <Nav variant="tabs">
       {
         navBar.map((itm) => {
