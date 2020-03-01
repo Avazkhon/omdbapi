@@ -9,6 +9,7 @@ import {
 } from 'react-bootstrap';
 
 import Ratings from './Ratings';
+import DetailItems from './DetailItems';
 
 const CartDetail = (
   {
@@ -17,20 +18,9 @@ const CartDetail = (
       Title,
       Writer,
       Plot,
-      Year,
-      Runtime,
-      Genre,
-      Director,
-      Actors,
-      Language,
-      Country,
-      Awards,
-      imdbID,
-      Type,
-      DVD,
-      Production,
       Ratings: ratings,
-    }
+    },
+    cartDetail,
   },
 ) => (
   <Row className="justify-content-md-center">
@@ -48,28 +38,17 @@ const CartDetail = (
             </Col>
           </Row>
 
-          <Ratings
-            ratings={ratings}
-          />
+          <Ratings ratings={ratings} />
 
-          </Card.Body>
-            <ListGroup className="list-group-flush dark">
-              <ListGroupItem>Year: {Year}</ListGroupItem>
-              <ListGroupItem>Run time: {Runtime}</ListGroupItem>
-              <ListGroupItem>Genre: {Genre}</ListGroupItem>
-              <ListGroupItem>Director: {Director}</ListGroupItem>
-              <ListGroupItem>Actors: {Actors}</ListGroupItem>
-              <ListGroupItem>Language: {Language}</ListGroupItem>
-              <ListGroupItem>Country: {Country}</ListGroupItem>
-              <ListGroupItem>Awards: {Awards}</ListGroupItem>
-              <ListGroupItem>imdb ID: {imdbID}</ListGroupItem>
-              <ListGroupItem>Type: {Type}</ListGroupItem>
-              <ListGroupItem>DVD: {DVD}</ListGroupItem>
-              <ListGroupItem>Production: {Production}</ListGroupItem>
-            </ListGroup>
-          <Card.Body>
+        </Card.Body>
+
+          <DetailItems cartDetail={cartDetail} />
+
+        <Card.Body>
+
           <Card.Link href="#">Card Link</Card.Link>
           <Card.Link href="#">Another Link</Card.Link>
+
         </Card.Body>
       </Card>
     </Col>
@@ -79,14 +58,5 @@ const CartDetail = (
 CartDetail.propTypes = {
   cartDetail: PropTypes.shape({}),
 };
-
-function mapStateToProps(state) {
-  const {
-    cartDetail,
-  } = state;
-  return {
-    cartDetail,
-  };
-}
 
 export default CartDetail;
