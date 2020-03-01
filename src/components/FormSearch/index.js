@@ -9,7 +9,7 @@ import {
   Col,
 } from 'react-bootstrap';
 
-
+import './index.css';
 
 class FormSearch extends React.Component {
   constructor(props) {
@@ -31,17 +31,17 @@ class FormSearch extends React.Component {
 
   render() {
     return (
-      <Container>
+      <Container className="dark form-search">
         <Row className="justify-content-md-center">
-          <Col>
+          <Col xs="7" sm="8" md="7" lg="6" xl="5">
             <FormControl type="text" placeholder="Enter name" className="mr-sm-2" />
           </Col>
-          <Col sm="2">
+          <Col xs="3" sm="4" md="3" lg="2" xl="2">
             <Button variant="outline-success">Search</Button>
           </Col>
         </Row>
-        <Row>
-          <Col sm="3">
+        <Row className="justify-content-md-center">
+          <Col xs="5" sm="6" md="4" lg="3" xl="2">
             <Form.Label>Type video</Form.Label>
             <Form.Control as="select">
               <option value="">All</option>
@@ -50,7 +50,7 @@ class FormSearch extends React.Component {
               <option value="episode">Episode</option>
             </Form.Control>
           </Col>
-          <Col sm="3">
+          <Col xs="5" sm="6" md="4" lg="3" xl="2">
             <Form.Label>Year of release. </Form.Label>
             <Form.Control type="number" placeholder="Enter year" />
           </Col>
