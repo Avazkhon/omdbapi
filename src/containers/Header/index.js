@@ -11,8 +11,8 @@ const Header = () => (
     {
       navBar.map((itm) => {
         return (
-          <Nav.Item>
-            <Nav.Link key={itm.id} href={itm.url}>{itm.label}</Nav.Link>
+          <Nav.Item key={itm.id}>
+            <Nav.Link href={itm.url}>{itm.label}</Nav.Link>
           </Nav.Item>
         )
       })

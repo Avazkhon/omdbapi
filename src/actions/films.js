@@ -11,7 +11,7 @@ export function getFilmsInfo (data) {
     [CALL_API]: {
       types: [GET_INFO_FILMS_REQUEST, GET_INFO_FILMS_SUCCESS, GET_INFO_FILMS_FAIL],
       method: 'GET',
-      endpoint: '?t=joker&apikey=1977b733'
+      endpoint: '?s=joker&apikey=1977b733'
     }
   })
 }

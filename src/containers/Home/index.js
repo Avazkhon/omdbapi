@@ -1,6 +1,14 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
+import {
+  Form,
+  FormControl,
+  Button,
+  Container,
+  Row,
+  Col,
+} from 'react-bootstrap';
 
 import Layout from '../Layout';
 
@@ -23,11 +31,31 @@ class Home extends React.Component {
   render() {
     return (
       <Layout>
-        <div className="Home">
-          <div className="Home-header">
-            <h2>Welcome to omdapi</h2>
-          </div>
-        </div>
+        <Container>
+          <Row>
+            <Col sm="8">
+            <FormControl type="text" placeholder="Enter name" className="mr-sm-2" />
+            </Col>
+            <Col sm="2">
+              <Button variant="outline-success">Search</Button>
+            </Col>
+          </Row>
+          <Row>
+            <Col sm="3">
+              <Form.Label>Type video</Form.Label>
+              <Form.Control as="select">
+                <option value="">All</option>
+                <option value="movie">Movie</option>
+                <option value="series">Series</option>
+                <option value="episode">Episode</option>
+              </Form.Control>
+            </Col>
+            <Col sm="3">
+              <Form.Label>Year of release. </Form.Label>
+              <Form.Control type="number" placeholder="Enter year" />
+            </Col>
+          </Row>
+        </Container>
       </Layout>
     );
   }
