@@ -1,12 +1,7 @@
 import { CALL_API } from '../middleware/api';
 import {
-  GET_INFO_FILMS_REQUEST,
-  GET_INFO_FILMS_SUCCESS,
-  GET_INFO_FILMS_FAIL,
-
-  GET_INFO_FILM_REQUEST,
-  GET_INFO_FILM_SUCCESS,
-  GET_INFO_FILM_FAIL,
+  GET_INFO_FILMS,
+  GET_INFO_FILM,
 } from '../constants';
 
 
@@ -16,20 +11,20 @@ export function getFilmsInfo (data) {
   const y = year ? `&y=${year}`: '';
   const endpoint = `?s=${search}${type}${y}&apikey=1977b733`
   return dispatch => dispatch({
-    [CALL_API]: {
-      types: [GET_INFO_FILMS_REQUEST, GET_INFO_FILMS_SUCCESS, GET_INFO_FILMS_FAIL],
+    type: GET_INFO_FILMS,
+    meta: {
       method: 'GET',
       endpoint,
-    }
-  })
+    },
+  });
 }
 
 export function getFilmInfo (imdbID) {
   return dispatch => dispatch({
-    [CALL_API]: {
-      types: [GET_INFO_FILM_REQUEST, GET_INFO_FILM_SUCCESS, GET_INFO_FILM_FAIL],
+    type: GET_INFO_FILM,
+    meta: {
       method: 'GET',
       endpoint: `?i=${imdbID}&apikey=1977b733`
     }
-  })
+  });
 }

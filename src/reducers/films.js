@@ -1,8 +1,9 @@
+import { GET_INFO_FILMS } from '../constants';
+
 import {
-  GET_INFO_FILMS_REQUEST,
-  GET_INFO_FILMS_SUCCESS,
-  GET_INFO_FILMS_FAIL,
-} from '../constants'
+  createReducer,
+  createRequestReducer,
+} from 'utils';
 
 const initState = {
   isFetching: false,
@@ -10,30 +11,22 @@ const initState = {
   error: null,
 };
 
-export default function films(state = initState, action) {
-
-  if (action.type === GET_INFO_FILMS_REQUEST) {
-    return {
-      ...state,
-      isFetching: true,
-    }
-  }
-  if (action.type === GET_INFO_FILMS_SUCCESS) {
-    return {
-      ...state,
-      error: null,
-      isFetching: false,
-      data: action.response,
-    }
-  }
-  if (action.type === GET_INFO_FILMS_FAIL) {
-    return {
-      ...state,
-      data: null,
-      isFetching: false,
-      error: action.error,
-    }
-  }
-
-  return state;
-}
+export default createReducer(initState, {
+  [GET_INFO_FILMS]: (_state, _action) =>
+    createRequestReducer(_state, _action, {
+      SEND: (state, action) => ({
+        ...state,
+        isFetching: true,
+      }),
+      SUCCESS: (state, action) => ({
+        ...state,
+        isFetching: false,
+        data: action.response,
+      }),
+      FAIL: (state, action) => ({
+        ...state,
+        isFetching: false,
+        data: null,
+      }),
+    }),
+});
