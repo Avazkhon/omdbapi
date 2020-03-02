@@ -10,6 +10,10 @@ import {
   // Card,
 } from 'react-bootstrap';
 
+import {
+  getPVToLocalStorage,
+} from 'utils';
+
 import CardList from 'components/CardList'
 
 const defaultFilms = [
@@ -24,8 +28,15 @@ class PreviouslyViewed extends React.Component {
   componentDidMount() {
     const { getPreviouslyViewed } =  this.props;
     if (typeof getPreviouslyViewed === 'function') {
-      for (let key in defaultFilms) {
-        getPreviouslyViewed(defaultFilms[key]);
+      const dataFromLocalStorage = getPVToLocalStorage() || [];
+      if (dataFromLocalStorage.length) {
+        for (let key in dataFromLocalStorage) {
+          getPreviouslyViewed(dataFromLocalStorage[key]);
+        }
+      } else {
+        for (let key in defaultFilms) {
+          getPreviouslyViewed(defaultFilms[key]);
+        }
       }
     }
   }
@@ -37,12 +48,16 @@ class PreviouslyViewed extends React.Component {
         data: Search,
         error,
       },
+      isShow,
     } = this.props;
-      const films = {
-        isFetching,
-        error,
-        data: { Search }
-      };
+
+    const films = {
+      isFetching,
+      error,
+      data: { Search }
+    };
+
+    if (!isShow) { return null };
 
     return (
       <CardList
@@ -55,6 +70,7 @@ class PreviouslyViewed extends React.Component {
 PreviouslyViewed.propTypes = {
   getPreviouslyViewed: PropTypes.func,
   previouslyViewed: PropTypes.shape({}),
+  isShow: PropTypes.bool,
 };
 
 export default PreviouslyViewed

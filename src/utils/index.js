@@ -15,3 +15,18 @@ export function createRequestReducer(state, action, reducerMap) {
 
   return reducer ? reducer(state, action) : state;
 };
+
+
+// set PreviouslyViewed to ...
+export function setPVToLocalStorage (imdbID) {
+  const prevData = getPVToLocalStorage() || [];
+  prevData.unshift(imdbID);
+  prevData.splice(5, 1);
+  localStorage.setItem('PV', JSON.stringify(prevData));
+}
+
+// get PreviouslyViewed from ...
+export function getPVToLocalStorage () {
+  const data = localStorage.getItem('PV')
+  return data && JSON.parse(data);
+}

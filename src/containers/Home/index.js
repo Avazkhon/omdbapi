@@ -32,6 +32,7 @@ class Home extends React.Component {
       previouslyViewed,
       films,
     } = this.props;
+
     return (
       <Layout>
         <FormSearch
@@ -43,6 +44,7 @@ class Home extends React.Component {
         />
 
         <PreviouslyViewed
+          isShow={!films.data}
           getPreviouslyViewed={getPreviouslyViewed}
           previouslyViewed={previouslyViewed}
         />

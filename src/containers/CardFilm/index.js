@@ -6,6 +6,11 @@ import {
   getFilmInfo
 } from 'actions';
 
+import {
+  inBrowser,
+  setPVToLocalStorage,
+} from 'utils';
+
 import CartDetail from './CartDetail';
 import Layout from '../Layout';
 
@@ -16,6 +21,7 @@ class CardFilm extends React.Component {
     const { imdbID } = this.props.match.params;
     if (typeof getFilmInfo === 'function') {
       getFilmInfo(imdbID);
+      setPVToLocalStorage(imdbID)
     }
   }
 
