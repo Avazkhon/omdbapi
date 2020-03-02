@@ -22,10 +22,22 @@ class FormSearch extends React.Component {
       },
     }
   }
-  componentDidMount() {
+
+  handleChange = (e) => {
+    const { name, value} = e.currentTarget;
+    this.setState((prevState) => ({
+      data: {
+        ...prevState.data,
+        [name]: value,
+      }
+    }));
+  }
+
+  handleSubmit = () => {
     const { getFilmsInfo } = this.props;
+    const { data } = this.state;
     if (typeof getFilmsInfo === 'function') {
-      getFilmsInfo();
+      getFilmsInfo(data);
     }
   }
 
@@ -34,16 +46,31 @@ class FormSearch extends React.Component {
       <Container className="dark form-search">
         <Row className="justify-content-md-center">
           <Col xs="7" sm="8" md="7" lg="6" xl="5">
-            <FormControl type="text" placeholder="Enter name" className="mr-sm-2" />
+            <FormControl
+              name="search"
+              type="text"
+              placeholder="Enter name"
+              className="mr-sm-2"
+              onChange={this.handleChange}
+            />
           </Col>
           <Col xs="3" sm="4" md="3" lg="2" xl="2">
-            <Button variant="outline-success">Search</Button>
+            <Button
+              variant="outline-success"
+              onClick={this.handleSubmit}
+            >
+              Search
+            </Button>
           </Col>
         </Row>
         <Row className="justify-content-md-center">
           <Col xs="5" sm="6" md="4" lg="3" xl="2">
             <Form.Label>Type video</Form.Label>
-            <Form.Control as="select">
+            <Form.Control
+              as="select"
+              name="typeVideo"
+              onChange={this.handleChange}
+            >
               <option value="">All</option>
               <option value="movie">Movie</option>
               <option value="series">Series</option>
@@ -52,7 +79,12 @@ class FormSearch extends React.Component {
           </Col>
           <Col xs="5" sm="6" md="4" lg="3" xl="2">
             <Form.Label>Year of release. </Form.Label>
-            <Form.Control type="number" placeholder="Enter year" />
+            <Form.Control
+              name="year"
+              type="number"
+              placeholder="Enter year"
+              onChange={this.handleChange}
+            />
           </Col>
         </Row>
       </Container>
