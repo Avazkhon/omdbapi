@@ -88,7 +88,6 @@ export default store => next => action => {
 
     error => {
       if (error.status === 403 || error.status === 401) {
-        // browserHistory.push('/login/');
         console.log('is not login');
       }
 
