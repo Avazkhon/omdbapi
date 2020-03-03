@@ -17,6 +17,7 @@ class FormSearch extends React.Component {
     this.state = {
       data: {
         search: '',
+        season: '',
         typeVideo: '',
         year: '',
       },
@@ -31,6 +32,18 @@ class FormSearch extends React.Component {
         [name]: value,
       }
     }));
+    this.deleteSeason(name, value);
+  }
+
+  deleteSeason = (name, value) => {
+    if (name === 'typeVideo' && value !== 'season') {
+      this.setState((prevState) => ({
+        data: {
+          ...prevState.data,
+          season: '',
+        }
+      }));
+    }
   }
 
   handleSubmit = () => {
@@ -42,12 +55,22 @@ class FormSearch extends React.Component {
   }
 
   render() {
+    const {
+      data: {
+        search,
+        season,
+        typeVideo,
+        year,
+      },
+    } = this.state;
+
     return (
       <Container className="form-search">
         <Row className="justify-content-center">
           <Col xs="7" sm="8" md="7" lg="6" xl="5">
             <FormControl
               name="search"
+              value={search}
               type="text"
               placeholder="Enter name"
               className="mr-sm-2"
@@ -67,6 +90,7 @@ class FormSearch extends React.Component {
           <Col xs="6" sm="6" md="5" lg="4" xl="4">
             <Form.Control
               name="year"
+              value={year}
               type="number"
               placeholder="Enter year of release"
               onChange={this.handleChange}
@@ -77,13 +101,25 @@ class FormSearch extends React.Component {
               as="select"
               name="typeVideo"
               onChange={this.handleChange}
+              value={typeVideo}
             >
               <option value="">Select type films</option>
               <option value="movie">Movie</option>
-              <option value="series">Series</option>
+              <option value="season">Series</option>
               <option value="episode">Episode</option>
             </Form.Control>
           </Col>
+          { typeVideo === 'season' &&
+            <Col xs="6" sm="6" md="5" lg="4" xl="4">
+              <Form.Control
+                name="season"
+                value={season}
+                type="number"
+                placeholder="Enter of season"
+                onChange={this.handleChange}
+              />
+            </Col>
+          }
         </Row>
       </Container>
     );

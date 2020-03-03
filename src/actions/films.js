@@ -7,10 +7,11 @@ import {
 
 
 export function getFilmsInfo (data) {
-  const { search, typeVideo, year } = data;
+  const { search, typeVideo, year, season } = data;
   const type = typeVideo ? `&type=${typeVideo}`: '';
   const y = year ? `&y=${year}`: '';
-  const endpoint = `?s=${search}${type}${y}&apikey=1977b733`
+  const Season = season ? `&Season=${season}`: '';
+  const endpoint = `?s=${search}${type}${y}${Season}&apikey=1977b733`
   return dispatch => dispatch({
     type: GET_INFO_FILMS,
     meta: {
