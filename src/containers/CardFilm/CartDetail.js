@@ -23,7 +23,7 @@ const CartDetail = (
     cartDetail,
   },
 ) => (
-  <Row className="justify-content-md-center">
+  <Row className="justify-content-center">
     <Col xs="12" sm="8" md="8" lg="8" xl="8">
       <Card bg="dark" text="white">
         <Card.Body>
