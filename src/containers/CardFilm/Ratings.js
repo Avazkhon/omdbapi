@@ -14,7 +14,7 @@ const Ratings = ({ ratings }) => (
       ratings &&
       ratings.map((rating, i) => (
         <Col md="12" key={rating.Source}>
-          <ListGroupItem>Source: {rating.Source} / Value: {rating.Value}</ListGroupItem>
+          <ListGroupItem variant="dark">Source: {rating.Source} / Value: {rating.Value}</ListGroupItem>
         </Col>
       ))
     }

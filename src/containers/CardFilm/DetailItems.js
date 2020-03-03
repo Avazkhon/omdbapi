@@ -24,18 +24,18 @@ const DetailItems = (
   },
 ) => (
   <ListGroup className="list-group-flush">
-    <ListGroupItem>Year: {Year}</ListGroupItem>
-    <ListGroupItem>Run time: {Runtime}</ListGroupItem>
-    <ListGroupItem>Genre: {Genre}</ListGroupItem>
-    <ListGroupItem>Director: {Director}</ListGroupItem>
-    <ListGroupItem>Actors: {Actors}</ListGroupItem>
-    <ListGroupItem>Language: {Language}</ListGroupItem>
-    <ListGroupItem>Country: {Country}</ListGroupItem>
-    <ListGroupItem>Awards: {Awards}</ListGroupItem>
-    <ListGroupItem>imdb ID: {imdbID}</ListGroupItem>
-    <ListGroupItem>Type: {Type}</ListGroupItem>
-    <ListGroupItem>DVD: {DVD}</ListGroupItem>
-    <ListGroupItem>Production: {Production}</ListGroupItem>
+    <ListGroupItem variant="dark">Year: {Year}</ListGroupItem>
+    <ListGroupItem variant="dark">Run time: {Runtime}</ListGroupItem>
+    <ListGroupItem variant="dark">Genre: {Genre}</ListGroupItem>
+    <ListGroupItem variant="dark">Director: {Director}</ListGroupItem>
+    <ListGroupItem variant="dark">Actors: {Actors}</ListGroupItem>
+    <ListGroupItem variant="dark">Language: {Language}</ListGroupItem>
+    <ListGroupItem variant="dark">Country: {Country}</ListGroupItem>
+    <ListGroupItem variant="dark">Awards: {Awards}</ListGroupItem>
+    <ListGroupItem variant="dark">imdb ID: {imdbID}</ListGroupItem>
+    <ListGroupItem variant="dark">Type: {Type}</ListGroupItem>
+    <ListGroupItem variant="dark">DVD: {DVD}</ListGroupItem>
+    <ListGroupItem variant="dark">Production: {Production}</ListGroupItem>
   </ListGroup>
 )
 
