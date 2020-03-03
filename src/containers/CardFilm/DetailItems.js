@@ -23,7 +23,7 @@ const DetailItems = (
     }
   },
 ) => (
-  <ListGroup className="list-group-flush dark">
+  <ListGroup className="list-group-flush">
     <ListGroupItem>Year: {Year}</ListGroupItem>
     <ListGroupItem>Run time: {Runtime}</ListGroupItem>
     <ListGroupItem>Genre: {Genre}</ListGroupItem>

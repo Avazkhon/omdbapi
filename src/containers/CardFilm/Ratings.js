@@ -13,7 +13,7 @@ const Ratings = ({ ratings }) => (
     {
       ratings &&
       ratings.map((rating, i) => (
-        <Col md="12" key={rating.Source} className="dark">
+        <Col md="12" key={rating.Source}>
           <ListGroupItem>Source: {rating.Source} / Value: {rating.Value}</ListGroupItem>
         </Col>
       ))

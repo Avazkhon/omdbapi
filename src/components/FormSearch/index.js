@@ -43,8 +43,8 @@ class FormSearch extends React.Component {
 
   render() {
     return (
-      <Container className="dark form-search">
-        <Row className="justify-content-md-center">
+      <Container className="form-search">
+        <Row className="justify-content-center">
           <Col xs="7" sm="8" md="7" lg="6" xl="5">
             <FormControl
               name="search"
@@ -56,35 +56,33 @@ class FormSearch extends React.Component {
           </Col>
           <Col xs="3" sm="4" md="3" lg="2" xl="2">
             <Button
-              variant="outline-success"
+              variant="secondary"
               onClick={this.handleSubmit}
             >
               Search
             </Button>
           </Col>
         </Row>
-        <Row className="justify-content-md-center">
-          <Col xs="5" sm="6" md="4" lg="3" xl="2">
-            <Form.Label>Type video</Form.Label>
+        <Row className="justify-content-center">
+          <Col xs="6" sm="6" md="5" lg="4" xl="4">
+            <Form.Control
+              name="year"
+              type="number"
+              placeholder="Enter year of release"
+              onChange={this.handleChange}
+            />
+          </Col>
+          <Col xs="6" sm="6" md="5" lg="4" xl="3">
             <Form.Control
               as="select"
               name="typeVideo"
               onChange={this.handleChange}
             >
-              <option value="">All</option>
+              <option value="">Select type films</option>
               <option value="movie">Movie</option>
               <option value="series">Series</option>
               <option value="episode">Episode</option>
             </Form.Control>
-          </Col>
-          <Col xs="5" sm="6" md="4" lg="3" xl="2">
-            <Form.Label>Year of release. </Form.Label>
-            <Form.Control
-              name="year"
-              type="number"
-              placeholder="Enter year"
-              onChange={this.handleChange}
-            />
           </Col>
         </Row>
       </Container>
