@@ -4,6 +4,7 @@ import {
   Container,
   Row,
   Spinner,
+  Alert,
 } from 'react-bootstrap';
 
 import CardItem from './CardItem';
@@ -13,8 +14,15 @@ const CardList= ({ films }) => (
   <Container>
     {
       films.isFetching &&
-      <Spinner animation="border" variant="primary" />
+      <Row className="justify-content-md-center">
+        <Spinner animation="border" variant="primary" />
+      </Row>
     }
+    {
+      films.data && films.data.Response === 'False' &&
+      <Alert variant="dark">{films.data.Error}</Alert>
+    }
+
     <Row>
       {
         films.data && films.data.Search &&
