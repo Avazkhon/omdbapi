@@ -21,7 +21,7 @@ export default createReducer(initState, {
       SUCCESS: (state, action) => ({
         ...state,
         isFetching: false,
-        data: action.response,
+        data: action.response.Search,
       }),
       FAIL: (state, action) => ({
         ...state,

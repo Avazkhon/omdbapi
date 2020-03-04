@@ -25,8 +25,8 @@ const CardList= ({ films }) => (
 
     <Row>
       {
-        films.data && films.data.Search &&
-        films.data.Search.map((film) => (
+        films.data &&
+        films.data.map((film) => (
           <CardItem
             key={film.imdbID}
             film={film}

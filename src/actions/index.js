@@ -6,4 +6,5 @@ export {
 
 export {
   updateFavorites,
+  getFaVorites,
 } from './favorites';

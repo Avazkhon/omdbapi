@@ -12,6 +12,14 @@ export default [
     }),
   },
   {
+    path: '/favorites',
+    exact: true,
+    component: asyncComponent({
+      loader: () => import('./containers/Favorites'),
+      Placeholder: () => <div>...LOADING FAVORITES...</div>,
+    }),
+  },
+  {
     path: '/card/:imdbID/',
     exact: true,
     component: asyncComponent({

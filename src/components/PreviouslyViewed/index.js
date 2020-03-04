@@ -43,25 +43,15 @@ class PreviouslyViewed extends React.Component {
 
   render() {
     const {
-      previouslyViewed: {
-        isFetching,
-        data: Search,
-        error,
-      },
+      previouslyViewed,
       isShow,
     } = this.props;
-
-    const films = {
-      isFetching,
-      error,
-      data: { Search }
-    };
 
     if (!isShow) { return null };
 
     return (
       <CardList
-        films={films}
+        films={previouslyViewed}
       />
     );
   }
