@@ -54,6 +54,12 @@ class FormSearch extends React.Component {
     }
   }
 
+  pressSubmit = (e) => {
+    if (e.key === 'Enter') {
+      this.handleSubmit();
+    }
+  }
+
   render() {
     const {
       data: {
@@ -75,6 +81,7 @@ class FormSearch extends React.Component {
               placeholder="Enter name"
               className="mr-sm-2"
               onChange={this.handleChange}
+              onKeyPress={this.pressSubmit}
             />
           </Col>
           <Col xs="3" sm="4" md="3" lg="2" xl="2">
