@@ -11,7 +11,7 @@ import ToFavorites  from 'widgets/ToFavorites';
 
 
 const CardItem = ({ film }) => (
-  <Col md="4">
+  <Col xs="12" md="6" lg="4" xl="3">
     <Card.Link href={`/card/${film.imdbID}`}>
       <Card bg="dark" text="white">
         <Card.Header>{film.Title}</Card.Header>
