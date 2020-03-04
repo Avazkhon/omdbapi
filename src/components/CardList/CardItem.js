@@ -7,6 +7,8 @@ import {
   Image,
 } from 'react-bootstrap';
 
+import ToFavorites  from 'widgets/ToFavorites';
+
 
 const CardItem = ({ film }) => (
   <Col md="4">
@@ -16,11 +18,16 @@ const CardItem = ({ film }) => (
         <Card.Body>
           <blockquote className="blockquote mb-0">
             <Row>
-              <Col md="6">
+              <Col md="5">
                 <p>year: {film.Year}</p>
               </Col>
-              <Col md="6">
+              <Col md="5">
                 <p>type: {film.Type}</p>
+              </Col>
+              <Col md="2">
+                <ToFavorites
+                  imdbID={film.imdbID}
+                />
               </Col>
             </Row>
             <Image src={film.Poster} thumbnail />

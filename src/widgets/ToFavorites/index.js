@@ -15,13 +15,15 @@ import {
 
 class ToFavorites extends Component {
 
-  handleAdd = () => {
+  handleAdd = (e) => {
+    e.preventDefault()
     const { imdbID, updateFavorites } = this.props;
     setFavoritesToLocalStorage(imdbID);
     updateFavorites();
   }
 
-  handleRemove = () => {
+  handleRemove = (e) => {
+    e.preventDefault()
     const { imdbID, updateFavorites } = this.props;
     removeFavoritesToLocalStorage(imdbID)
     updateFavorites();

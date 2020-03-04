@@ -51,9 +51,6 @@ const CartDetail = (
           <ToFavorites
             imdbID={imdbID}
           />
-          <Card.Link href="#">Card Link</Card.Link>
-          <Card.Link href="#">Another Link</Card.Link>
-
         </Card.Body>
       </Card>
     </Col>

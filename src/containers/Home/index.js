@@ -13,7 +13,8 @@ import {
 
 import {
   getFilmsInfo,
-  getPreviouslyViewed
+  getPreviouslyViewed,
+  updateFavorites,
 } from 'actions';
 
 import Layout from '../Layout';
@@ -24,6 +25,10 @@ import CardList from 'components/CardList';
 import PreviouslyViewed from 'components/PreviouslyViewed';
 
 class Home extends React.Component {
+  componentDidMount () {
+    const { updateFavorites } = this.props;
+    updateFavorites();
+  }
 
   render() {
     const {
@@ -55,6 +60,8 @@ class Home extends React.Component {
 
 Home.propTypes = {
   getFilmsInfo: PropTypes.func,
+  getPreviouslyViewed: PropTypes.func,
+  updateFavorites: PropTypes.func,
   films: PropTypes.shape({}),
 };
 
@@ -72,4 +79,5 @@ function mapStateToProps(state) {
 export default connect(mapStateToProps, {
   getFilmsInfo,
   getPreviouslyViewed,
+  updateFavorites,
 })(Home);
