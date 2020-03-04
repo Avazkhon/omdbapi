@@ -8,6 +8,8 @@ import {
   ListGroupItem,
 } from 'react-bootstrap';
 
+import ToFavorites  from 'widgets/ToFavorites';
+
 import Ratings from './Ratings';
 import DetailItems from './DetailItems';
 
@@ -18,6 +20,7 @@ const CartDetail = (
       Title,
       Writer,
       Plot,
+      imdbID,
       Ratings: ratings,
     },
     cartDetail,
@@ -45,7 +48,9 @@ const CartDetail = (
           <DetailItems cartDetail={cartDetail} />
 
         <Card.Body>
-
+          <ToFavorites
+            imdbID={imdbID}
+          />
           <Card.Link href="#">Card Link</Card.Link>
           <Card.Link href="#">Another Link</Card.Link>
 

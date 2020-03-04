@@ -3,7 +3,6 @@ import 'isomorphic-fetch';
 import queryString from 'query-string';
 import uuidV4 from 'uuid/v4';
 
-export const CALL_API = Symbol('Call API');
 
 function callApi(endpoint, method, data, queryParams, options) {
   let fullUrl = options.apiRoot + endpoint;

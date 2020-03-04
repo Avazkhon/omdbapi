@@ -3,7 +3,8 @@ import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
 import {
-  getFilmInfo
+  getFilmInfo,
+  updateFavorites,
 } from 'actions';
 
 import {
@@ -17,11 +18,12 @@ import Layout from '../Layout';
 class CardFilm extends React.Component {
 
   componentDidMount() {
-    const { getFilmInfo } = this.props;
+    const { getFilmInfo, updateFavorites } = this.props;
     const { imdbID } = this.props.match.params;
     if (typeof getFilmInfo === 'function') {
       getFilmInfo(imdbID);
-      setPVToLocalStorage(imdbID)
+      setPVToLocalStorage(imdbID);
+      updateFavorites();
     }
   }
 
@@ -44,6 +46,8 @@ class CardFilm extends React.Component {
 
 CardFilm.propTypes = {
   film: PropTypes.shape({}),
+  getFilmInfo: PropTypes.func,
+  updateFavorites: PropTypes.func,
 };
 
 function mapStateToProps(state) {
@@ -56,5 +60,6 @@ function mapStateToProps(state) {
 }
 
 export default connect(mapStateToProps, {
-  getFilmInfo
+  getFilmInfo,
+  updateFavorites,
 })(CardFilm);

@@ -1,4 +1,3 @@
-import { CALL_API } from '../middleware/api';
 import {
   GET_INFO_FILMS,
   GET_INFO_FILM,
