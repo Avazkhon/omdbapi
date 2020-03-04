@@ -27,4 +27,11 @@ export default [
       Placeholder: () => <div>...LOADING CARD FILM...</div>,
     }),
   },
+  {
+    path: '*',
+    component: asyncComponent({
+      loader: () => import('./containers/Notfound'),
+      Placeholder: () => <div>...DONT PAGE</div>,
+    }),
+  },
 ];
