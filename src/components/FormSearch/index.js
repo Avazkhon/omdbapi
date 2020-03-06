@@ -32,18 +32,18 @@ class FormSearch extends React.Component {
         [name]: value,
       }
     }));
-    this.deleteSeason(name, value);
+    if (name === 'typeVideo' && value !== 'season') {
+      this.deleteSeason(name, value);
+    }
   }
 
-  deleteSeason = (name, value) => {
-    if (name === 'typeVideo' && value !== 'season') {
-      this.setState((prevState) => ({
-        data: {
-          ...prevState.data,
-          season: '',
-        }
-      }));
-    }
+  deleteSeason = () => {
+    this.setState((prevState) => ({
+      data: {
+        ...prevState.data,
+        season: '',
+      }
+    }));
   }
 
   handleSubmit = () => {
