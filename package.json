@@ -14,9 +14,9 @@
   "dependencies": {
     "@jaredpalmer/after": "^1.5.1",
     "bootstrap": "^4.4.1",
-    "cookie": "^0.4.0",
-    "cookie-parser": "^1.4.4",
-    "express": "^4.17.1",
+    "cookie": "^1.0.1",
+    "cookie-parser": "^1.4.7",
+    "express": "^4.21.1",
     "extract-text-webpack-plugin": "^3.0.2",
     "isomorphic-fetch": "^2.2.1",
     "prop-types": "^15.7.2",
